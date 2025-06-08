@@ -1,0 +1,103 @@
+# A2A Stock Management System Configuration
+
+oracle:
+  host: localhost
+  port: 1521
+  service_name: ORCL
+  username: inventory
+  password: password
+  min_connections: 2
+  max_connections: 10
+
+email:
+  smtp_server: smtp.gmail.com
+  smtp_port: 587
+  username: your_email@gmail.com
+  password: your_app_password
+  from_email: system@company.com
+  manager_emails:
+    - manager@company.com
+  use_tls: true
+
+suppliers:
+  '1':
+    name: Supplier Alpha
+    location: US-East
+    pricing_strategy: competitive
+    catalog:
+      WIDGET_A:
+        base_price: 10.50
+        min_order_quantity: 50
+        terms: Net 30
+      COMP_B:
+        base_price: 2.75
+        min_order_quantity: 25
+        terms: Net 30
+      MAT_C:
+        base_price: 1.25
+        min_order_quantity: 100
+        terms: Net 15
+      TOOL_D:
+        base_price: 45.99
+        min_order_quantity: 10
+        terms: COD
+  '2':
+    name: Supplier Beta
+    location: EU-West
+    pricing_strategy: premium
+    catalog:
+      WIDGET_A:
+        base_price: 11.25
+        min_order_quantity: 40
+        terms: Net 30
+      COMP_B:
+        base_price: 2.95
+        min_order_quantity: 20
+        terms: Net 30
+      MAT_C:
+        base_price: 1.35
+        min_order_quantity: 80
+        terms: Net 15
+      TOOL_D:
+        base_price: 48.50
+        min_order_quantity: 5
+        terms: Net 15
+  '3':
+    name: Supplier Gamma
+    location: Asia-Pacific
+    pricing_strategy: standard
+    catalog:
+      WIDGET_A:
+        base_price: 9.75
+        min_order_quantity: 60
+        terms: Net 45
+      COMP_B:
+        base_price: 2.50
+        min_order_quantity: 30
+        terms: Net 45
+      MAT_C:
+        base_price: 1.15
+        min_order_quantity: 120
+        terms: Net 30
+      TOOL_D:
+        base_price: 42.99
+        min_order_quantity: 15
+        terms: Net 30
+
+inventory:
+  check_interval: 60  # seconds
+  thresholds:
+    WIDGET_A: 50
+    COMP_B: 25
+    MAT_C: 100
+    TOOL_D: 20
+
+stock_manager:
+  offer_timeout: 300  # seconds (5 minutes)
+  selection_criteria:
+    price_weight: 0.4
+    speed_weight: 0.3
+    reliability_weight: 0.3
+
+manager:
+  auto_approve_threshold: 1000.0  # USD

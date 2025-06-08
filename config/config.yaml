@@ -1,0 +1,94 @@
+email:
+  from_email: system@company.com
+  manager_emails:
+  - manager@company.com
+  password: your_app_password
+  smtp_port: 587
+  smtp_server: smtp.gmail.com
+  use_tls: true
+  username: your_email@gmail.com
+gemini:
+  api_key: ''
+  max_tokens: 2048
+  model_name: gemini-pro
+  temperature: 0.7
+  timeout: 30
+inventory:
+  check_interval: 60
+  thresholds:
+    COMP_B: 25
+    MAT_C: 100
+    TOOL_D: 20
+    WIDGET_A: 50
+manager:
+  auto_approve_threshold: 1000.0
+oracle:
+  host: localhost
+  max_connections: 10
+  min_connections: 2
+  password: password
+  port: 1521
+  service_name: ORCL
+  username: inventory
+redis:
+  db: 0
+  password: null
+  url: redis://localhost:6379
+stock_manager:
+  offer_timeout: 300
+  selection_criteria:
+    price_weight: 0.4
+    reliability_weight: 0.3
+    speed_weight: 0.3
+suppliers:
+  '1':
+    catalog:
+      COMP_B:
+        base_price: 2.75
+        min_order_quantity: 25
+      MAT_C:
+        base_price: 1.25
+        min_order_quantity: 100
+      TOOL_D:
+        base_price: 45.99
+        min_order_quantity: 10
+      WIDGET_A:
+        base_price: 10.5
+        min_order_quantity: 50
+    location: US-East
+    name: Supplier Alpha
+    pricing_strategy: competitive
+  '2':
+    catalog:
+      COMP_B:
+        base_price: 2.95
+        min_order_quantity: 20
+      MAT_C:
+        base_price: 1.35
+        min_order_quantity: 80
+      TOOL_D:
+        base_price: 48.5
+        min_order_quantity: 5
+      WIDGET_A:
+        base_price: 11.25
+        min_order_quantity: 40
+    location: EU-West
+    name: Supplier Beta
+    pricing_strategy: premium
+  '3':
+    catalog:
+      COMP_B:
+        base_price: 2.5
+        min_order_quantity: 30
+      MAT_C:
+        base_price: 1.15
+        min_order_quantity: 120
+      TOOL_D:
+        base_price: 42.99
+        min_order_quantity: 15
+      WIDGET_A:
+        base_price: 9.75
+        min_order_quantity: 60
+    location: Asia-Pacific
+    name: Supplier Gamma
+    pricing_strategy: standard
