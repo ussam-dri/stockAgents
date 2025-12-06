@@ -2,6 +2,8 @@
 
 A robust implementation of the **Agent2Agent (A2A)** protocol designed to manage stock operations, product queries, and order processing through a collaborative multi-agent architecture. This system demonstrates standardized communication between a central Host Agent and remote Supplier Agents using AI-driven interactions.
 
+
+![A2A Stock Agent Demo](./a2a.png)
 ## 📋 Project Overview
 
 This project implements an **Agent-to-Agent (A2A)** system compliant with the A2A protocol specification. It is designed to handle enterprise-level inventory tasks such as:
