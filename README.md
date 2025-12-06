@@ -16,17 +16,17 @@ The architecture features a **Host Agent** (Company Agent) that coordinates with
 
 The system is built upon a Client-Server model that ensures modularity and scalability:
 
-* [cite_start]**A2A Server:** Built with **Starlette**, exposing HTTP endpoints compliant with A2A standards[cite: 38, 124].
-* [cite_start]**Host Agent:** Acts as the central orchestrator, interfacing with the frontend and delegating tasks to remote agents[cite: 22, 51].
-* [cite_start]**Remote Agents:** Independent AI agents (e.g., Supplier Agents) that perform specific tasks like checking external database stocks[cite: 19, 52].
-* [cite_start]**Communication:** Uses **JSON-RPC 2.0** over HTTP(S) for data exchange and **Server-Sent Events (SSE)** for real-time streaming[cite: 140, 147].
+* **A2A Server:** Built with **Starlette**, exposing HTTP endpoints compliant with A2A standards.
+* **Host Agent:** Acts as the central orchestrator, interfacing with the frontend and delegating tasks to remote agents.
+* **Remote Agents:** Independent AI agents (e.g., Supplier Agents) that perform specific tasks like checking external database stocks.
+* **Communication:** Uses **JSON-RPC 2.0** over HTTP(S) for data exchange and **Server-Sent Events (SSE)** for real-time streaming.
 
 ## ✨ Key Features
 
-* [cite_start]**Dynamic Agent Discovery:** Utilizing **Agent Cards** to define and broadcast agent identity, capabilities, and skills (e.g., `get_products_info`, `place_order`)[cite: 123, 162].
-* [cite_start]**Real-Time Streaming:** Asynchronous feedback loop providing users with immediate status updates (e.g., "Processing exchange rates...") before the final result[cite: 140, 246].
-* [cite_start]**Multi-Turn Conversations:** Stateful interactions managed via `MemorySaver`, allowing agents to request missing information (like Customer IDs) during a transaction[cite: 218].
-* [cite_start]**Database Integration:** Direct connection to **Oracle** and **MySQL** databases for persistent management of inventory and orders[cite: 91, 252].
+* **Dynamic Agent Discovery:** Utilizing **Agent Cards** to define and broadcast agent identity, capabilities, and skills (e.g., `get_products_info`, `place_order`).
+* **Real-Time Streaming:** Asynchronous feedback loop providing users with immediate status updates (e.g., "Processing exchange rates...") before the final result.
+* **Multi-Turn Conversations:** Stateful interactions managed via `MemorySaver`, allowing agents to request missing information (like Customer IDs) during a transaction.
+* **Database Integration:** Direct connection to **Oracle** and **MySQL** databases for persistent management of inventory and orders.
 
 ## 🛠️ Technical Stack
 
@@ -40,11 +40,11 @@ The system is built upon a Client-Server model that ensures modularity and scala
 
 | File | Description |
 | :--- | :--- |
-| `__main__.py` | Entry point. [cite_start]Configures the A2A server, builds the **Agent Card**, and handles the application launch[cite: 170]. |
-| `agent_executor.py` | [cite_start]Manages the task execution loop for remote agents, handling state transitions (`working`, `input_required`, `completed`)[cite: 197]. |
-| `agent.py` | Contains the **Supplier Agent** logic. [cite_start]Defines tools for Oracle DB interactions (stock checks, order creation) and Gemini LLM integration[cite: 214]. |
-| `company_agent_executor.py` | [cite_start]Manages execution for the Host (Company) Agent, bridging the server and local business logic[cite: 233]. |
-| `company_agent.py` | Contains the **Company Agent** logic. [cite_start]Handles local product queries and coordinates with remote suppliers[cite: 248]. |
+| `__main__.py` | Entry point. Configures the A2A server, builds the **Agent Card**, and handles the application launch. |
+| `agent_executor.py` | Manages the task execution loop for remote agents, handling state transitions (`working`, `input_required`, `completed`). |
+| `agent.py` | Contains the **Supplier Agent** logic. Defines tools for Oracle DB interactions (stock checks, order creation) and Gemini LLM integration. |
+| `company_agent_executor.py` | Manages execution for the Host (Company) Agent, bridging the server and local business logic. |
+| `company_agent.py` | Contains the **Company Agent** logic. Handles local product queries and coordinates with remote suppliers. |
 
 ## 🚀 Installation & Setup
 
