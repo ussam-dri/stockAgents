@@ -55,7 +55,3 @@ The system is built upon a Client-Server model that ensures modularity and scala
 * Access to an Oracle or MySQL database
 * A Google Cloud API Key (for Gemini)
 
-### 1. Clone the Repository
-```bash
-git clone [https://github.com/your-username/stockAgents.git](https://github.com/your-username/stockAgents.git)
-cd stockAgents
